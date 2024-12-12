@@ -13,12 +13,14 @@ function App() {
 
   const getPosts = async () => {
     const { data: posts } = await axios.get(urlBaseServer + "/posts");
+    console.log(posts);
     setPosts([...posts]);
   };
 
   const agregarPost = async () => {
     const post = { titulo, url: imgSrc, descripcion };
     await axios.post(urlBaseServer + "/posts", post);
+    console.log(post);
     getPosts();
   };
 

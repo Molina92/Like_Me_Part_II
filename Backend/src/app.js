@@ -10,7 +10,6 @@ app.use(morgan('dev'))
 app.use(cors())
 app.use(express.json())
 
-
 // Routes
 app.use('/', APIRoutes)
 

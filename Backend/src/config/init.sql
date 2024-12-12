@@ -9,6 +9,7 @@ descripcion VARCHAR(255), likes INT);
 
 select * from posts
 
+delete from posts
 
 
 

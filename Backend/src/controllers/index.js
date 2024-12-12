@@ -1,5 +1,13 @@
 const Posts = require('../models/Posts');
 
+const handleGetPosts = async (req, res) => {
+    const response = await Posts.getPosts();
+    res.status(200).json({
+        msg: 'Posts obtenidos con exito',
+        data: response
+    });
+}
+
 const handleCreatePost = async (req, res) => {
     const { titulo, img, descripcion } = req.body;
     
@@ -12,5 +20,6 @@ const handleCreatePost = async (req, res) => {
 }
 
 module.exports = {
-    handleCreatePost
+    handleCreatePost,
+    handleGetPosts
 }
