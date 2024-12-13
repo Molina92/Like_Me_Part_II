@@ -19,7 +19,32 @@ const handleCreatePost = async (req, res) => {
     });
 }
 
+const handleUpdatePost = async (req, res) => {
+    const { id } = req.params;
+    const { likes } = req.body;
+    
+    const response = await Posts.updatePost(id, likes);
+    
+    res.status(200).json({
+        msg: 'Post actualizado con exito',
+        data: response
+    });
+}
+
+const handleDeletePost = async (req, res) => {
+    const { id } = req.params;
+    
+    const response = await Posts.deletePost(id);
+    
+    res.status(200).json({
+        msg: 'Post eliminado con exito',
+        data: response
+    });
+}
+
 module.exports = {
     handleCreatePost,
-    handleGetPosts
+    handleGetPosts,
+    handleUpdatePost,
+    handleDeletePost
 }
