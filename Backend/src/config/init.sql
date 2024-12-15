@@ -1,4 +1,4 @@
--- Active: 1729855615076@@127.0.0.1@5432@likeme@public
+-- Active: 1729899505784@@127.0.0.1@5432@likeme@public
 
 -- Create database
 CREATE DATABASE likeme;
